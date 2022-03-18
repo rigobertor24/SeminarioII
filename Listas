@@ -1,1 +1,41 @@
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ListaCircular1
+{
+    public class ListaCircular
+    {
+        class Nodo
+        {
+            public int info;
+            public Nodo ant, sig;
+        }
+
+        private Nodo raiz;
+
+        public ListaCircular()
+        {
+            raiz = null;
+        }
+
+        public void InsertarPrimero(int x)
+        {
+            Nodo nuevo = new Nodo();
+            nuevo.info = x;
+            if (raiz == null)
+            {
+                nuevo.sig = nuevo;
+                nuevo.ant = nuevo;
+                raiz = nuevo;
+            }
+            else
+            {
+                Nodo ultimo = raiz.ant;
+                nuevo.sig = raiz;
+                nuevo.ant = ultimo;
+                raiz.ant = nuevo;
+                ultimo.sig = nuevo;
+                raiz = nuevo;
