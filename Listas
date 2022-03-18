@@ -32,7 +32,15 @@ namespace ListaCircular1
                 raiz = nuevo;
             }
             else
-            {
+            { 
+            public bool Vacia()
+        {
+            if (raiz == null)
+                return true;
+            else
+                return false;
+        }
+
                 Nodo ultimo = raiz.ant;
                 nuevo.sig = raiz;
                 nuevo.ant = ultimo;
@@ -61,3 +69,11 @@ public void InsertarUltimo(int x)
                 ultimo.sig = nuevo;
             }
         }
+        public bool Vacia()
+        {
+            if (raiz == null)
+                return true;
+            else
+                return false;
+        }
+
