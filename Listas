@@ -104,4 +104,36 @@ public void Imprimir()
             }
             return cant;
         }
+        
+        public void Borrar(int pos)
+        {
+            if (pos <= Cantidad())
+            {
+                if (pos == 1)
+                {
+                    if (Cantidad() == 1)
+                    {
+                        raiz = null;
+                    }
+                    else
+                    {
+                        Nodo ultimo = raiz.ant;
+                        raiz = raiz.sig;
+                        ultimo.sig = raiz;
+                        raiz.ant = ultimo;
+                    }
+                }
+                else
+                {
+                    Nodo reco = raiz;
+                    for (int f = 1; f <= pos - 1; f++)
+                        reco = reco.sig;
+                    Nodo anterior = reco.ant;
+                    reco = reco.sig;
+                    anterior.sig = reco;
+                    reco.ant = anterior;
+                }
+            }
+        }
+
 
