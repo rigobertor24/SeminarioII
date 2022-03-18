@@ -39,3 +39,5 @@ namespace ListaCircular1
                 raiz.ant = nuevo;
                 ultimo.sig = nuevo;
                 raiz = nuevo;
+                }
+}
