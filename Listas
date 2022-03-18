@@ -41,3 +41,23 @@ namespace ListaCircular1
                 raiz = nuevo;
                 }
 }
+
+public void InsertarUltimo(int x)
+        {
+            Nodo nuevo = new Nodo();
+            nuevo.info = x;
+            if (raiz == null)
+            {
+                nuevo.sig = nuevo;
+                nuevo.ant = nuevo;
+                raiz = nuevo;
+            }
+            else
+            {
+                Nodo ultimo = raiz.ant;
+                nuevo.sig = raiz;
+                nuevo.ant = ultimo;
+                raiz.ant = nuevo;
+                ultimo.sig = nuevo;
+            }
+        }
