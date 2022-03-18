@@ -136,4 +136,29 @@ public void Imprimir()
             }
         }
 
+static void Main(string[] args)
+        {
+            ListaCircular lc=new ListaCircular();
+            lc.InsertarPrimero(100);
+            lc.InsertarPrimero(45);
+            lc.InsertarPrimero(12);
+            lc.InsertarPrimero(4);
+            Console.WriteLine("Luego de insertar 4 nodos al principio");
+            lc.Imprimir();
+            lc.InsertarUltimo(250);
+            lc.InsertarUltimo(7);
+            Console.WriteLine("Luego de insertar 2 nodos al final");
+            lc.Imprimir();
+            Console.WriteLine("Cantidad de nodos:"+lc.Cantidad());
+            Console.WriteLine("Luego de borrar el de la primer posición:");
+            lc.Borrar(1);
+            lc.Imprimir();
+            Console.WriteLine("Luego de borrar el de la cuarta posición:");
+            lc.Borrar(4);
+            lc.Imprimir();
+            Console.ReadKey();
+        }
+    }        
+}
+
 
