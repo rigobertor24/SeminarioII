@@ -76,4 +76,18 @@ public void InsertarUltimo(int x)
             else
                 return false;
         }
+        
+public void Imprimir()
+        {
+            if (!Vacia())
+            {
+                Nodo reco = raiz;
+                do
+                {
+                    Console.Write(reco.info + "-");
+                    reco = reco.sig;
+                } while (reco != raiz);
+                Console.WriteLine();
+            }
+        }
 
