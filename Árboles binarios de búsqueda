@@ -113,3 +113,18 @@ int Vacio(Arbol r) {
 int EsHoja(pNodo r) {
    return !r->derecho && !r->izquierdo;
 }
+
+
+/*Contar Número de Nodos*/
+int NumeroNodos(Arbol a, int *contador) {
+   *contador = 0;
+
+   auxContador(a, contador);
+   return *contador;
+}
+
+void auxContador(Arbol nodo, int *c) {
+   (*c)++; /* Acción: incrementar número de nodos. (Preorden) */
+   if(nodo->izquierdo) auxContador(nodo->izquierdo, c); /* Rama izquierda */
+   if(nodo->derecho)   auxContador(nodo->derecho, c);   /* Rama derecha */
+}
