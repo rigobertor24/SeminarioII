@@ -108,3 +108,8 @@ int Vacio(Arbol r) {
    return r==NULL;
 }
 
+//Comprobar si un nodo es hoja
+
+int EsHoja(pNodo r) {
+   return !r->derecho && !r->izquierdo;
+}
