@@ -102,3 +102,9 @@ int Buscar(Arbol a, int dat) {
    }
    return FALSE; /* No está en árbol (1) */
 }
+
+/*Comprobar si el árbol está vacío*/
+int Vacio(Arbol r) {
+   return r==NULL;
+}
+
