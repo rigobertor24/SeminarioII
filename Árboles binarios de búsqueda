@@ -40,3 +40,65 @@ void Insertar(Arbol *a, int dat) {
       actual->izquierdo = actual->derecho = NULL;
   }
 }
+
+//Eliminar un elemento
+void Borrar(Arbol *a, int dat) {
+   pNodo padre = NULL; /* (1) */
+   pNodo actual;
+   pNodo nodo;
+   int aux;
+
+   actual = *a;
+   while(!Vacio(actual)) { /* Búsqueda (2) else implícito */
+      if(dat == actual->dato) { /* (3) */
+         if(EsHoja(actual)) { /* (3-a) */
+            if(padre)/* (3-a-i caso else implícito) */
+               if(padre->derecho == actual) padre->derecho = NULL;  /* (3-a-ii) */
+               else if(padre->izquierdo == actual) padre->izquierdo = NULL; /* (3-a-iii) */
+            free(actual); /* (3-a-iv) */
+            actual = NULL;
+            return;
+         }
+         else { /* (3-b) */
+            /* Buscar nodo */
+            padre = actual; /* (3-b-i) */
+            if(actual->derecho) {
+               nodo = actual->derecho;
+               while(nodo->izquierdo) {
+                  padre = nodo;
+                  nodo = nodo->izquierdo;
+               }
+            }
+            else {
+               nodo = actual->izquierdo;
+               while(nodo->derecho) {
+                  padre = nodo;
+                  nodo = nodo->derecho;
+               }
+            }
+            /* Intercambio */
+            aux = actual->dato; /* (3-b-ii) */
+            actual->dato = nodo->dato;
+            nodo->dato = aux;
+            actual = nodo;
+         }
+      }
+      else {
+         padre = actual;
+         if(dat > actual->dato) actual = actual->derecho; /* (4) */
+         else if(dat < actual->dato) actual = actual->izquierdo; /* (5) */
+      }
+   }
+}
+
+//Buscar un elemento
+int Buscar(Arbol a, int dat) {
+   pNodo actual = a;
+
+   while(!Vacio(actual)) {
+      if(dat == actual->dato) return TRUE; /* dato encontrado  (2) */
+      else if(dat < actual->dato) actual = actual->izquierdo;  /* (3) */
+      else if(dat > actual->dato) actual = actual->derecho; /* (4) */
+   }
+   return FALSE; /* No está en árbol (1) */
+}
