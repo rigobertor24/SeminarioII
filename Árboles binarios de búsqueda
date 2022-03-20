@@ -128,7 +128,12 @@ void auxContador(Arbol nodo, int *c) {
    if(nodo->izquierdo) auxContador(nodo->izquierdo, c); /* Rama izquierda */
    if(nodo->derecho)   auxContador(nodo->derecho, c);   /* Rama derecha */
 }
+
+
+
 /*Calcular la altura de un árbol*/
+
+
 int AlturaArbol(Arbol a, int *altura) {
    altura = 0; / (1) */
 
