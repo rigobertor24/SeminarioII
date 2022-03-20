@@ -147,3 +147,21 @@ void auxAltura(pNodo nodo, int a, int *altura) {
    if(nodo->derecho)   auxAltura(nodo->derecho, a+1, altura);   /* Rama derecha */
    if(EsHoja(nodo) && a > altura) *altura = a; / Proceso (Postorden)  (3) */
 }
+
+/*Calcular la altura del nodo que contiene un dato concreto*/
+
+int Altura(Arbol a, int dat) {
+   int altura = 0;
+   pNodo actual = a; /* (1) */
+
+   while(!Vacio(actual)) {
+      if(dat == actual->dato) return altura; /* dato encontrado. (2) */
+      else {
+         altura++; /* (3) */
+         if(dat < actual->dato) actual = actual->izquierdo; /* (4) */
+         else if(dat > actual->dato) actual = actual->derecho; /* (5) */
+      }
+   }
+   return -1; /* No está en árbol */
+}
+
