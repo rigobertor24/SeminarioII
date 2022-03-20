@@ -128,3 +128,16 @@ void auxContador(Arbol nodo, int *c) {
    if(nodo->izquierdo) auxContador(nodo->izquierdo, c); /* Rama izquierda */
    if(nodo->derecho)   auxContador(nodo->derecho, c);   /* Rama derecha */
 }
+int AlturaArbol(Arbol a, int *altura) {
+   altura = 0; / (1) */
+
+   auxAltura(a, 0, altura);
+   return *altura;
+}
+
+void auxAltura(pNodo nodo, int a, int *altura) {
+   /* (2) Cada vez que llamamos a auxAltura pasamos como parámetro a+1 */
+   if(nodo->izquierdo) auxAltura(nodo->izquierdo, a+1, altura); /* Rama izquierda */
+   if(nodo->derecho)   auxAltura(nodo->derecho, a+1, altura);   /* Rama derecha */
+   if(EsHoja(nodo) && a > altura) *altura = a; / Proceso (Postorden)  (3) */
+}
