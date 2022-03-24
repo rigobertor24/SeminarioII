@@ -28,9 +28,6 @@
 	       while(temp!=-1)
 	       {
 	           cout<< temp << " <- " ;
-		   
-		   
-		   
                  temp = par[temp] ; 
 	       }
 	       cout<<endl; 
