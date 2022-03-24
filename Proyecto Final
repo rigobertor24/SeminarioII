@@ -20,3 +20,12 @@
 	    return key ; 
 	 }
 
+
+	void display(int dist[] , int par[] ){
+	   for(int i =0 ;i < n ;i++){
+	       int temp = par[i] ; 
+	       cout<<i << " <- " ;
+	       while(temp!=-1)
+	       {
+	           cout<< temp << " <- " ;
+
