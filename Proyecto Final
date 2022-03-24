@@ -1,1 +1,11 @@
+#include<bits/stdc++.h>
+	using namespace std ;
+	
+
+	int cost[100][100] , n  ; 
+	
+
+	int getMin(int dist[] , bool visited[]){
+	    int key = 0 ; 
+	    int min = INT_MAX ; 
 
