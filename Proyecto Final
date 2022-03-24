@@ -51,5 +51,15 @@ void dijkstra(int src ){
 	        int u = getMin( dist ,  visited )  ; 
 	        visited[u] = true ;
 	        cout<< " min = " << u <<endl; 
+		
+		        for(int v =0 ; v< n ;v++){
+            if(!visited[v] && (dist[u]+cost[u][v]) <  dist[v] && cost[u][v]!=9999)
+            {
+                par[v] = u ; 
+                dist[v] = dist[u] + cost[u][v] ; 
+            }
+        }
+    }
+
 
 
