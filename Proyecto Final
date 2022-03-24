@@ -28,4 +28,14 @@
 	       while(temp!=-1)
 	       {
 	           cout<< temp << " <- " ;
+		   
+		   
+		   
+                 temp = par[temp] ; 
+	       }
+	       cout<<endl; 
+	       cout<<"::::Distance = " << dist[i] ; 
+	       cout<<endl; 
+	   } 
+	}
 
