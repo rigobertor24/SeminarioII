@@ -62,4 +62,19 @@ void dijkstra(int src ){
     }
 
 
+display(dist , par) ; 
+}
 
+
+
+int main(void) { 
+    cout<<"Enter n : " ; 
+    cin>>n ; 
+    cout<<"Enter cost matrix : \n" ; 
+    for(int i = 0 ;i < n ; i++){
+        for(int j = 0 ; j< n ; j++)cin>>cost[i][j] ; 
+    }
+    int src ; 
+    cout<<"\nEnter source : " ;  cin>>src ;
+    dijkstra(src) ; 
+}
