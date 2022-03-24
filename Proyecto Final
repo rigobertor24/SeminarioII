@@ -36,3 +36,20 @@
 	   } 
 	}
 
+
+
+void dijkstra(int src ){
+	    int par[100] , dist[100] ; 
+	    bool visited[100] ={0} ; 
+	    fill(dist , dist+n  , INT_MAX ) ; 
+	
+
+	    dist[src] =0 ; 
+	    par[src] =-1 ;
+	    
+	    for(int g = 0  ;g<n-1 ; g++){
+	        int u = getMin( dist ,  visited )  ; 
+	        visited[u] = true ;
+	        cout<< " min = " << u <<endl; 
+
+
